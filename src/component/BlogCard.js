@@ -3,7 +3,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 class BlogCard extends React.Component {
   render () {
     return(
-
+      
       <div className='blog-card'>
         <div className='blog-index'> <span>{this.props.index}</span>  </div>
       <div className='blog-content clearfix'>

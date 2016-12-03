@@ -1,18 +1,29 @@
 import React from 'react';
 import BlogCard from '../component/BlogCard.js';
-let data=[
-  {index:1,title:'hello',desc:'wrold'},
-  {index:2,title:'this is car',desc:'wrold2'},
-  {index:3,title:'hello3',desc:'wrold3'},
-  {index:4,title:'hello4',desc:'wrold4'}
-]
+import axios from 'axios';
+import Loading from '../component/Loading.js'
+
 class Blog extends React.Component{
+
+    constructor(){
+      super();
+      this.state={
+        data:[],
+        wait:true
+      }
+    }
+    componentDidMount(){
+    axios.get('https://raw.githubusercontent.com/superce/demo-09/master/data/blogCard.json')
+    .then(res=>this.setState({data:res.data,wait:false}))
+  }
   render(){
-    let cards=data.map((item,i)=><BlogCard{...item} key={i} />)
+
     return(
       <div className='blog-wrap'>
+        {this.state.wait ? <Loading /> :
 
-        {cards}
+            this.state.data.map((item,i)=><BlogCard{...item} key={i} />)
+          }
 
       </div>
     )
