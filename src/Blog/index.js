@@ -14,7 +14,7 @@ class Blog extends React.Component{
     }
     componentDidMount(){
     axios.get('https://raw.githubusercontent.com/superce/demo-09/master/data/blogCard.json')
-    .then(res=>this.setState({data:res.data,wait:false}))
+      .then(res => this.setState({data:res.data,wait:false}))
   }
   render(){
 
@@ -22,7 +22,7 @@ class Blog extends React.Component{
       <div className='blog-wrap'>
         {this.state.wait ? <Loading /> :
 
-            this.state.data.map((item,i)=><BlogCard{...item} key={i} />)
+            this.state.data.map( (item,i) => <BlogCard {...item} key={i} />)
           }
 
       </div>
