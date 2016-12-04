@@ -6,6 +6,11 @@ button:focus,button:active,button:visited{
   flex-direction: column;
   height: 100vh;
 }
+@media(min-width:760px){
+  .my-wrap{
+    flex-direction: row;
+  }
+}
 .main{
   flex-grow: 1;
   overflow-y: scroll;
@@ -98,7 +103,7 @@ button:focus,button:active,button:visited{
 }
 .blog-card{
   padding: 0 10px;
-  max-width: 600px
+  
 }
 
 .blog-wrap{
@@ -130,4 +135,21 @@ button:focus,button:active,button:visited{
 }
 .blog h3{
   margin:10px 0;
+}
+.leftNav-wrap{
+  width: 260px;
+  background-color:black;
+  color:#fff;
+  text-align: center;
+
+}
+.leftNav-wrap a{
+  display: block;
+  padding: 10px;
+  color:#fff;
+  font-size: 20px;
+  text-decoration: none;
+}
+.leftNav-wrap a:hove{
+
 }
